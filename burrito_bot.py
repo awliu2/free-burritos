@@ -1,7 +1,7 @@
 import asyncio
 from twscrape import AccountsPool, API, gather
 import time
-
+import sys
 import config as cfg
 import code_handler
  
@@ -11,6 +11,10 @@ USER_ID = 141341662
 USE_MANUAL_LOCATION = False # set to True if you want to manually set the location of the text box
 
 async def main():
+
+    if "-m" in sys.argv:
+        USE_MANUAL_LOCATION = True
+    
     # initialize the account login
     pool = AccountsPool()
     await pool.add_account(cfg.login['username'], cfg.login['password'], 

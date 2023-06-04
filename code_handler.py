@@ -1,4 +1,5 @@
 import re
+import os
 import pyautogui
 import pyperclip
 from pynput import mouse
@@ -13,7 +14,13 @@ class CodeHandler:
     """
 
     def __init__(self, use_manual_location=False):
+        # create a file to store seen codes if it doesn't exist
+        if 'seen_codes.txt' not in os.listdir():
+            open('seen_codes.txt', 'w').close()
+        
+        # load seen codes into memory
         self.seen_codes = set(l.strip() for l in open('seen_codes.txt', 'r'))
+        
         self.location = None
         if use_manual_location:
             print("#"*40)
@@ -29,6 +36,8 @@ class CodeHandler:
                     self.location = self.__get_text_box()
                 except:
                     continue
+        
+        print(f"Text box location: {self.location}")
     
     
     def __find_code(self, content):
