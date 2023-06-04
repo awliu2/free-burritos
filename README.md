@@ -1,4 +1,4 @@
-# Burrito Bot
+# Burrito Bot🌯
 A bot to get the three-pointer promo codes during the 2023 NBA finals.
 
 ## Install & Requirements
