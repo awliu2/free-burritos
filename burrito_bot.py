@@ -8,13 +8,12 @@ import code_handler
 # user id of chipotle's twitter account
 USER_ID = 141341662
 
-USE_MANUAL_LOCATION = False # set to True if you want to manually set the location of the text box
-
 async def main():
 
     if "-m" in sys.argv:
-        USE_MANUAL_LOCATION = True
-    
+        use_manual_location = True
+    else:
+        use_manual_location = False
     # initialize the account login
     pool = AccountsPool()
     await pool.add_account(cfg.login['username'], cfg.login['password'], 
@@ -24,7 +23,7 @@ async def main():
 
 
     # initialize a code_handler object
-    handler = code_handler.CodeHandler(use_manual_location = USE_MANUAL_LOCATION)
+    handler = code_handler.CodeHandler(use_manual_location = use_manual_location)
 
     # constantly get the latest tweet from chipotle's twitter account
     while True:
