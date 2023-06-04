@@ -37,7 +37,7 @@ Open iMessages, and start a new message with the Chipotle short code number (888
 ```
 python3 burrito_bot.py
 ```
-The script will attempt to automatically detect the iMessage window location. Ensure that the iMessage window remains visible when running the script, which will automatically send any newly detected codes via iMessages.
+The script will attempt to automatically detect the iMessage window location. Ensure that the iMessage window remains visible when running the script.
 
 ### Automatic vs Manual text box detection
 
