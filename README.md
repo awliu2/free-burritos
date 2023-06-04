@@ -56,5 +56,7 @@ When prompted, click on the iMessage text box, making sure to click **inside the
 
 * Since this bot requires cursor and keyboard access, it is best not to use your machine at the same time.
 
+* credit to [baolong281](https://github.com/baolong281/infinite-food-glitch) for the general idea of this project.
+
 
 

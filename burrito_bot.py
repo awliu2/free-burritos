@@ -4,28 +4,32 @@ import time
 import sys
 import config as cfg
 import code_handler
+import os
  
 # user id of chipotle's twitter account
 USER_ID = 141341662
 
 async def main():
-
+    # check if the user wants to use a manual location
     if "-m" in sys.argv:
         use_manual_location = True
     else:
         use_manual_location = False
+    
     # initialize the account login
+    if 'accounts.db' in os.listdir():
+        os.remove('accounts.db')
+    
     pool = AccountsPool()
     await pool.add_account(cfg.login['username'], cfg.login['password'], 
                            cfg.login['email'], cfg.login['password'])
     await pool.login_all()
     api = API(pool)
 
-
     # initialize a code_handler object
     handler = code_handler.CodeHandler(use_manual_location = use_manual_location)
 
-    # constantly get the latest tweet from chipotle's twitter account
+    # attempt to get the latest tweet from chipotle's twitter account
     while True:
         tweets = await gather(api.user_tweets(USER_ID, limit=1))
         if not tweets:
