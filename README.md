@@ -37,17 +37,20 @@ Open iMessages, and start a new message with the Chipotle short code number (888
 ```
 python3 burrito_bot.py
 ```
-The script will attempt to automatically detect the iMessage window location. Ensure that the iMessage window remains visible when running the script.
-
-### Automatic vs Manual text box detection
-
-If automatic detection doesn't work (depending on screen resolution, display scaling), use manual text box detection instead.
-```
-python3 burrito_bot.py -m
-```
 
 When prompted, click on the iMessage text box, making sure to click **inside the oval**: 
 ![iMessage text box](screenshots/messagebox.png)
+
+Ensure that the imessage text box remains fully visible while running the bot. To exit at any time use `ctrl + c`. 
+
+### Automatic vs Manual text box detection
+
+There is an automatic iMessage window detection mode, which may or may not work as it is reliant on image recognition. You can enable it via the `-a` flag:
+```
+python3 burrito_bot.py -a
+```
+The script will attempt to automatically detect the iMessage window location. Ensure that the iMessage window remains visible once you run the script.
+
 
 
 ### Notes

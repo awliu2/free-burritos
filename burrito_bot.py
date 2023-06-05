@@ -5,16 +5,16 @@ import sys
 import config as cfg
 import code_handler
 import os
- 
+
 # user id of chipotle's twitter account
 USER_ID = 141341662
 
 async def main():
     # check if the user wants to use a manual location
-    if "-m" in sys.argv:
-        use_manual_location = True
-    else:
+    if "-a" in sys.argv:
         use_manual_location = False
+    else:
+        use_manual_location = True
     
     # initialize the account login
     if 'accounts.db' in os.listdir():
@@ -47,4 +47,4 @@ async def main():
     
 
 if __name__ == "__main__":
-   asyncio.run(main())
+    asyncio.run(main())
