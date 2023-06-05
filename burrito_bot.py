@@ -22,7 +22,7 @@ async def main():
     
     pool = AccountsPool()
     await pool.add_account(cfg.login['username'], cfg.login['password'], 
-                           cfg.login['email'], cfg.login['password'])
+                            cfg.login['email'], cfg.login['password'])
     await pool.login_all()
     api = API(pool)
 

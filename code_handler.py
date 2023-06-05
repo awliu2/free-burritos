@@ -41,15 +41,11 @@ class CodeHandler:
     
     
     def __find_code(self, content):
-        # attempts to find a code in a given string
-        pattern1= "....FREE3S to 888222"
-        pattern2= "BONUSFREEPOINTER.... to 888222"
-        match1 = re.search(pattern1, content)
-        match2 = re.search(pattern2, content)
-        if match1:
-            return match1.group().split(" ")[0]
-        elif match2:
-            return match2.group().split(" ")[0]
+        # attempts to find a valid code in a given string
+        pattern= "[^\s]+ to 888222"
+        match = re.search(pattern, content)
+        if match:
+            return match.group().split(" ")[0]
         else:
             return None
     
