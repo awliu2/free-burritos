@@ -72,6 +72,11 @@ class CodeHandler:
             print(cmd)
             os.system(cmd)
             return True
+
+    """
+    Old code using pyautogui and pyperclip to automatically 
+    paste codes into the imessage text box. Keeping here for future reference.
+    """
     # def __get_text_box(self):
     #     # function to get location of imessages text box
     #     for img in ['txtmsg1.png', 'txtmsg2.png']:
