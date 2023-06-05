@@ -42,7 +42,7 @@ class CodeHandler:
     
     def __find_code(self, content):
         # attempts to find a code in a given string
-        pattern1= "FREETHREES.... to 888222"
+        pattern1= "....FREE3S to 888222"
         pattern2= "BONUSFREEPOINTER.... to 888222"
         match1 = re.search(pattern1, content)
         match2 = re.search(pattern2, content)
