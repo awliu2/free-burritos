@@ -12,7 +12,7 @@ A bot to get the three-pointer promo codes during the 2023 NBA finals.
 ```
 git clone https://github.com/awliu2/free-burritos.git
 cd free-burritos
-pip3 -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 or `pip`, whichever one works for you.
