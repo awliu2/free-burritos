@@ -1,5 +1,5 @@
 # 🌯 Burrito Bot
-### A bot to automate the chipotle three-pointer promo codes during the 2023 NBA finals. Built using [twscrape](https://github.com/vladkens/twscrape), [pyautogui](https://pypi.org/project/PyAutoGUI/), and [pyperclip](https://github.com/asweigart/pyperclip).
+### A bot to automate the chipotle three-pointer promo codes during the 2023 NBA finals, using the [twscrape](https://github.com/vladkens/twscrape) API scrapper.
 
 ___
 ## Install & Requirements
@@ -27,7 +27,7 @@ ___
     pip3 install --upgrade pip
     ```
 
-3. Make sure to install all dependencies with 
+3. Make sure to install the twscrape dependency using 
     ```
     pip3 install -r requirements.txt
     ```
@@ -44,39 +44,17 @@ ___
 
 5. Make sure you have text message forwarding enabled for your iMessages account: [instructions here.](https://support.apple.com/en-us/HT208386)
 
-6. The first time you run the script, you may be prompted to grant terminal accessibility access. Do so in system preferences, or else the script will not be able to input mouse and keystrokes.
+6. The first time you run the script, you may be prompted to grant terminal access to iMessages. Do so in system preferences.
 ___
 ## Usage
 Open iMessages, and start a new message with the Chipotle short code number (888222), make sure that it is on the top of your window, and run:
 ```
 python3 burrito_bot.py
 ```
-
-When prompted, click on the iMessage text box, making sure to click **inside the oval**: 
-![iMessage text box](screenshots/messagebox.png)
-
-Ensure that the imessage text box remains fully visible while running the bot. To exit at any time use `ctrl + c`.
-
-___
-## Automatic vs Manual text box detection
-
-There is an automatic iMessage window detection mode, which may or may not work as it is reliant on image recognition. You can enable it via the `-a` flag:
-```
-python3 burrito_bot.py -a
-```
-The script will attempt to automatically detect the iMessage window location. Ensure that the iMessage window remains visible once you run the script.
-(Tested on Macbook Pro 14").
-
 ___
 ## Notes
 
 * The twitter API has a 250 request per 15 minutes per account limit. Thus, if the script does not seem to be working, but it is able to locate the imessage window, the API request is likely timing out. (250 seconds / 2 seconds per request $\approx$ 8.3 minutes of continuous runtime before timing out).
 
-* Since this bot requires cursor and keyboard access, it is best not to use your machine at the same time.
 
-* credit to [baolong281](https://github.com/baolong281/infinite-food-glitch) for the general idea of this project.
-
-
-
-
-
+* credit to [baolong281](https://github.com/baolong281/infinite-food-glitch) for the twscrape code, 

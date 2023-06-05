@@ -1,7 +1,6 @@
 import asyncio
 from twscrape import AccountsPool, API, gather
 import time
-import sys
 import config as cfg
 import code_handler
 import os
@@ -10,12 +9,6 @@ import os
 USER_ID = 141341662
 
 async def main():
-    # check if the user wants to use a manual location
-    if "-a" in sys.argv:
-        use_manual_location = False
-    else:
-        use_manual_location = True
-    
     # initialize the account login
     if 'accounts.db' in os.listdir():
         os.remove('accounts.db')
@@ -27,7 +20,7 @@ async def main():
     api = API(pool)
 
     # initialize a code_handler object
-    handler = code_handler.CodeHandler(use_manual_location = use_manual_location)
+    handler = code_handler.CodeHandler()
 
     # attempt to get the latest tweet from chipotle's twitter account
     while True:
