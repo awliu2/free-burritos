@@ -45,6 +45,8 @@ ___
 5. Make sure you have text message forwarding enabled for your iMessages account: [instructions here.](https://support.apple.com/en-us/HT208386)
 
 6. The first time you run the script, you may be prompted to grant terminal access to iMessages. Do so in system preferences.
+
+7. You'll need to have a message log with "888222". So open iMessages and send them anything, otherwise the applescript will fail.
 ___
 ## Usage
 Open iMessages, and start a new message with the Chipotle short code number (888222), make sure that it is on the top of your window, and run:
